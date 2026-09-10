@@ -1,0 +1,17 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# datos de participantes: no se versionan (datos sensibles de menores,
+# celdas pequenas por municipio -> riesgo de reidentificacion).
+# La carpeta data/ si se versiona (con un README), solo su contenido no.
+/data/*
+!/data/.gitkeep
+
+# bookdown build artifacts (docs/ is committed for GitHub Pages)
+/_bookdown_files/
+/eda-apoyo-social-entrapment_files/
+*.knit.md
+*.utf8.md
+_main.Rmd

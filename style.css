@@ -1,0 +1,10 @@
+p.caption {
+  font-size: 0.85em;
+  color: #555;
+  text-align: center;
+}
+
+.table {
+  margin-left: auto;
+  margin-right: auto;
+}

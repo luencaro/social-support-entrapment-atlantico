@@ -1,0 +1,35 @@
+---
+title: "Apoyo Social y Entrapment en Adolescentes Escolarizados del Atlántico"
+subtitle: "Análisis Exploratorio de Datos (EDA)"
+author: "Natalia Alvarado y Luis Cabarcas"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+lang: es
+link-citations: yes
+description: "Análisis Exploratorio de Datos del proyecto de Seminario Investigativo sobre apoyo social percibido y entrapment en adolescentes escolarizados de municipios del departamento del Atlántico, Colombia."
+github-repo: "luencaro/social-support-entrapment-atlantico"
+---
+
+```{r setup, include=FALSE}
+source("R/_common.R")
+```
+
+# Presentación {-}
+
+Este libro documenta el Análisis Exploratorio de Datos (EDA) del proyecto de Seminario
+Investigativo *"El género en la relación entre apoyo social y entrapment como moderador
+en adolescentes escolarizados de municipios del Atlántico"* (Alvarado & Cabarcas, 2026),
+enmarcado en el modelo Motivacional-Volitivo Integrado (IMV).
+
+El objetivo de este EDA es caracterizar las covariables sociodemográficas de la muestra
+y describir la distribución de los puntajes de apoyo social percibido (familia, amigos
+y otras personas significativas) y de entrapment, como paso previo a la imputación de
+datos faltantes y al análisis de moderación por género.
+
+La muestra está compuesta por `r nrow(df)` estudiantes escolarizados (grados 9.° a 11.°)
+de cuatro municipios del departamento del Atlántico, Colombia.
+
+Este documento se genera de forma reproducible con [bookdown](https://bookdown.org/) a
+partir del código fuente disponible en el repositorio de
+[GitHub](https://github.com/luencaro/social-support-entrapment-atlantico).

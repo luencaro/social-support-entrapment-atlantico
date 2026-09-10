@@ -1,0 +1,241 @@
+# Análisis Exploratorio de Datos {#eda}
+
+## Características Sociodemográficas
+
+### Género
+
+```{r genero-tabla}
+freq_table(df, "Gender")
+```
+
+```{r genero-plot, fig.cap="Distribución de participantes por género"}
+plot_categorical(df, "Gender", xlab = "Género")
+```
+
+La muestra presenta una ligera mayoría de participantes de género femenino
+(`r sum(df$Gender == "Female")` de `r nrow(df)`, `r round(100*mean(df$Gender=="Female"),1)`%),
+frente a `r sum(df$Gender == "Male")` participantes de género masculino
+(`r round(100*mean(df$Gender=="Male"),1)`%). El porcentaje de valores faltantes en esta
+variable es bajo (`r sum(df$Gender == "Missing")` casos, `r round(100*mean(df$Gender=="Missing"),1)`%).
+
+### Edad
+
+```{r edad-missing, fig.cap="Completitud de la variable Edad"}
+plot_missingness(df, "Age")
+```
+
+```{r edad-hist, fig.cap="Distribución de la edad de los participantes"}
+plot_histogram(df, "Age", xlab = "Edad (años)", binwidth = 1)
+```
+
+```{r edad-box, fig.cap="Boxplot de la edad con umbrales de Hampel"}
+plot_boxplot_hampel(df, "Age", ylab = "Edad (años)")
+```
+
+```{r edad-resumen}
+summary_stats(df, "Age") %>%
+  kable(digits = 2, col.names = c("N", "Faltantes", "Media", "DE", "Mediana", "Mín", "Máx")) %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover"))
+```
+
+La edad presenta un bajo porcentaje de valores faltantes
+(`r sum(is.na(df$Age))` de `r nrow(df)`, `r round(100*mean(is.na(df$Age)),1)`%). El test de
+Lilliefors confirma una desviación estadísticamente significativa de la normalidad, consistente
+con la ligera asimetría positiva observada en el histograma. El filtro de Hampel
+(mediana ± 3×MAD) no evidencia valores atípicos: todas las edades registradas se encuentran
+dentro del rango esperado para la población de estudio (adolescentes escolarizados de 9.° a 11.°).
+
+### Grado Escolar
+
+```{r grado-tabla}
+freq_table(df, "Grade")
+```
+
+```{r grado-plot, fig.cap="Distribución de participantes por grado escolar"}
+plot_categorical(df, "Grade", xlab = "Grado")
+```
+
+La distribución por grado escolar es relativamente balanceada entre 9.°, 10.° y 11.°,
+lo que favorece la representatividad de comparaciones estratificadas por nivel académico
+en los análisis posteriores.
+
+### Municipio
+
+```{r municipio-tabla}
+freq_table(df, "Municipality")
+```
+
+```{r municipio-plot, fig.cap="Distribución de participantes por municipio"}
+plot_categorical(df, "Municipality", xlab = "Municipio")
+```
+
+Polo Nuevo y Santo Tomás concentran la mayor parte de la muestra, mientras que Puerto
+Colombia y Suan constituyen un estrato secundario, más reducido, de participantes.
+
+### Etnia
+
+```{r etnia-tabla}
+freq_table(df, "Ethnicity")
+```
+
+```{r etnia-plot, fig.cap="Distribución de participantes por grupo étnico"}
+plot_categorical(df, "Ethnicity", xlab = "Grupo étnico")
+```
+
+La composición étnica de la muestra es heterogénea, con 'Mestizo' y 'Caucasian' como las
+categorías más frecuentes, seguidas de 'Afrodescendant' y 'Other'. El porcentaje de
+valores faltantes en esta variable (`r round(100*mean(df$Ethnicity=="Missing"),1)`%) es
+mayor que en las demás variables demográficas, lo que sugiere mayor reticencia o
+dificultad de auto-reporte en este ítem.
+
+### Nivel Socioeconómico (SSE)
+
+```{r sse-tabla}
+freq_table(df, "SSE")
+```
+
+```{r sse-plot, fig.cap="Distribución de participantes por nivel socioeconómico"}
+plot_categorical(df, "SSE", xlab = "Nivel Socioeconómico")
+```
+
+El nivel socioeconómico 'Low' concentra a la gran mayoría de la muestra, seguido de
+'Medium', mientras que 'High' representa una fracción marginal. Esta distribución es
+consistente con el contexto semirural de los municipios estudiados. El porcentaje de
+valores faltantes (`r round(100*mean(df$SSE=="Missing"),1)`%) es el más alto entre las
+variables demográficas, atribuible probablemente a que un subconjunto de adolescentes
+desconoce la clasificación socioeconómica oficial de su hogar.
+
+### Nivel Educativo de los Padres
+
+```{r educacion-tabla}
+freq_table(df, "Education")
+```
+
+```{r educacion-plot, fig.cap="Distribución de participantes por nivel educativo de los padres"}
+plot_categorical(df, "Education", xlab = "Nivel Educativo de los Padres")
+```
+
+'High School' es la categoría modal, lo que indica que la educación secundaria está
+ampliamente asegurada entre los hogares de los participantes, mientras que el acceso a
+educación superior ('Undergraduate' y 'Graduate') es considerablemente menor.
+
+## Apoyo Social Percibido y Entrapment
+
+Las variables `Family`, `Friends` y `SigOthers` corresponden a los puntajes latentes de
+las tres dimensiones de la Escala Multidimensional de Apoyo Social Percibido (MSPSS):
+familia, amigos y otras personas significativas. La variable `Entrapment` corresponde al
+puntaje latente de *entrapment*, acompañado de su error estándar de medición
+(`Entrapment_SE`). Al tratarse de puntajes derivados de un modelo de medición, se
+esperan distribuciones aproximadamente continuas centradas alrededor de cero.
+
+### Apoyo Familiar (Family)
+
+```{r family-missing, fig.cap="Completitud de la dimensión Family"}
+plot_missingness(df, "Family")
+```
+
+```{r family-hist, fig.cap="Distribución del puntaje de apoyo familiar"}
+plot_histogram(df, "Family", xlab = "Apoyo Familiar (puntaje latente)")
+```
+
+```{r family-box, fig.cap="Boxplot del puntaje de apoyo familiar con umbrales de Hampel"}
+plot_boxplot_hampel(df, "Family", ylab = "Apoyo Familiar (puntaje latente)")
+```
+
+```{r family-resumen}
+summary_stats(df, "Family") %>%
+  kable(digits = 2, col.names = c("N", "Faltantes", "Media", "DE", "Mediana", "Mín", "Máx")) %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover"))
+```
+
+### Apoyo de Amigos (Friends)
+
+```{r friends-missing, fig.cap="Completitud de la dimensión Friends"}
+plot_missingness(df, "Friends")
+```
+
+```{r friends-hist, fig.cap="Distribución del puntaje de apoyo de amigos"}
+plot_histogram(df, "Friends", xlab = "Apoyo de Amigos (puntaje latente)")
+```
+
+```{r friends-box, fig.cap="Boxplot del puntaje de apoyo de amigos con umbrales de Hampel"}
+plot_boxplot_hampel(df, "Friends", ylab = "Apoyo de Amigos (puntaje latente)")
+```
+
+```{r friends-resumen}
+summary_stats(df, "Friends") %>%
+  kable(digits = 2, col.names = c("N", "Faltantes", "Media", "DE", "Mediana", "Mín", "Máx")) %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover"))
+```
+
+### Apoyo de Otras Personas Significativas (SigOthers)
+
+```{r sigothers-missing, fig.cap="Completitud de la dimensión SigOthers"}
+plot_missingness(df, "SigOthers")
+```
+
+```{r sigothers-hist, fig.cap="Distribución del puntaje de apoyo de otras personas significativas"}
+plot_histogram(df, "SigOthers", xlab = "Apoyo de Otras Personas Significativas (puntaje latente)")
+```
+
+```{r sigothers-box, fig.cap="Boxplot del puntaje de SigOthers con umbrales de Hampel"}
+plot_boxplot_hampel(df, "SigOthers", ylab = "Apoyo de Otras Personas Significativas (puntaje latente)")
+```
+
+```{r sigothers-resumen}
+summary_stats(df, "SigOthers") %>%
+  kable(digits = 2, col.names = c("N", "Faltantes", "Media", "DE", "Mediana", "Mín", "Máx")) %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover"))
+```
+
+Las tres dimensiones del apoyo social percibido comparten un patrón de valores faltantes
+de magnitud similar (`r sum(is.na(df$Family))` casos, `r round(100*mean(is.na(df$Family)),1)`%),
+lo cual es consistente con que provienen del mismo instrumento (MSPSS) y probablemente
+del mismo subconjunto de participantes con no-respuesta en la escala completa.
+
+### Entrapment
+
+```{r entrapment-missing, fig.cap="Completitud del puntaje de Entrapment"}
+plot_missingness(df, "Entrapment")
+```
+
+```{r entrapment-hist, fig.cap="Distribución del puntaje de Entrapment"}
+plot_histogram(df, "Entrapment", xlab = "Entrapment (puntaje latente)")
+```
+
+```{r entrapment-box, fig.cap="Boxplot del puntaje de Entrapment con umbrales de Hampel"}
+plot_boxplot_hampel(df, "Entrapment", ylab = "Entrapment (puntaje latente)")
+```
+
+```{r entrapment-resumen}
+summary_stats(df, "Entrapment") %>%
+  kable(digits = 2, col.names = c("N", "Faltantes", "Media", "DE", "Mediana", "Mín", "Máx")) %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover"))
+```
+
+#### Error estándar de medición (Entrapment_SE)
+
+```{r entrapment-se-hist, fig.cap="Distribución del error estándar del puntaje de Entrapment"}
+plot_histogram(df, "Entrapment_SE", xlab = "Error Estándar de Entrapment")
+```
+
+El error estándar de medición de *entrapment* varía entre participantes, lo que refleja
+la precisión diferencial del puntaje latente estimado y deberá tenerse en cuenta al
+incorporar la incertidumbre de medición en los modelos de moderación (por ejemplo,
+mediante un enfoque SEM o Bayesiano).
+
+### Correlaciones entre las variables continuas
+
+```{r correlaciones, fig.cap="Matriz de correlación (pares completos) entre apoyo social y entrapment", fig.width=5, fig.height=5}
+vars_continuas <- df %>% select(Family, Friends, SigOthers, Entrapment)
+cor_mat <- cor(vars_continuas, use = "pairwise.complete.obs")
+corrplot::corrplot(cor_mat, method = "color", type = "upper", addCoef.col = "black",
+                    tl.col = "black", diag = FALSE)
+```
+
+Como es de esperar, las tres dimensiones del apoyo social percibido están
+correlacionadas positivamente entre sí, mientras que `Entrapment` muestra una asociación
+en sentido contrario con cada una de ellas, en línea con la hipótesis de que un mayor
+apoyo social percibido se relaciona con menores niveles de *entrapment*. Esta observación
+descriptiva es la que se pondrá a prueba formalmente mediante los modelos de regresión
+jerárquica planteados en el proyecto.

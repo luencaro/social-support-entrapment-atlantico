@@ -1,0 +1,14 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      collapse: subsection
+      before: |
+        <li><strong>Apoyo Social y Entrapment</strong></li>
+      after: |
+        <li><a href="https://github.com/luencaro/social-support-entrapment-atlantico" target="_blank">Repositorio en GitHub</a></li>
+    sharing: no
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2

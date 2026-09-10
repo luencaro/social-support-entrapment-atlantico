@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 1 Introducción | Apoyo Social y Entrapment en Adolescentes Escolarizados del Atlántico</title>
+  <meta name="description" content="Análisis Exploratorio de Datos del proyecto de Seminario Investigativo sobre apoyo social percibido y entrapment en adolescentes escolarizados de municipios del departamento del Atlántico, Colombia." />
+  <meta name="generator" content="bookdown 0.48 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 1 Introducción | Apoyo Social y Entrapment en Adolescentes Escolarizados del Atlántico" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Análisis Exploratorio de Datos del proyecto de Seminario Investigativo sobre apoyo social percibido y entrapment en adolescentes escolarizados de municipios del departamento del Atlántico, Colombia." />
+  <meta name="github-repo" content="luencaro/social-support-entrapment-atlantico" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 1 Introducción | Apoyo Social y Entrapment en Adolescentes Escolarizados del Atlántico" />
+  
+  <meta name="twitter:description" content="Análisis Exploratorio de Datos del proyecto de Seminario Investigativo sobre apoyo social percibido y entrapment en adolescentes escolarizados de municipios del departamento del Atlántico, Colombia." />
+  
+
+<meta name="author" content="Natalia Alvarado y Luis Cabarcas" />
+
+
+<meta name="date" content="2026-09-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="eda.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong>Apoyo Social y Entrapment</strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduccion.html"><a href="introduccion.html#contexto"><i class="fa fa-check"></i><b>1.1</b> Contexto</a></li>
+<li class="chapter" data-level="1.2" data-path="introduccion.html"><a href="introduccion.html#sobre-los-datos"><i class="fa fa-check"></i><b>1.2</b> Sobre los datos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> Análisis Exploratorio de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="eda.html"><a href="eda.html#características-sociodemográficas"><i class="fa fa-check"></i><b>2.1</b> Características Sociodemográficas</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="eda.html"><a href="eda.html#género"><i class="fa fa-check"></i><b>2.1.1</b> Género</a></li>
+<li class="chapter" data-level="2.1.2" data-path="eda.html"><a href="eda.html#edad"><i class="fa fa-check"></i><b>2.1.2</b> Edad</a></li>
+<li class="chapter" data-level="2.1.3" data-path="eda.html"><a href="eda.html#grado-escolar"><i class="fa fa-check"></i><b>2.1.3</b> Grado Escolar</a></li>
+<li class="chapter" data-level="2.1.4" data-path="eda.html"><a href="eda.html#municipio"><i class="fa fa-check"></i><b>2.1.4</b> Municipio</a></li>
+<li class="chapter" data-level="2.1.5" data-path="eda.html"><a href="eda.html#etnia"><i class="fa fa-check"></i><b>2.1.5</b> Etnia</a></li>
+<li class="chapter" data-level="2.1.6" data-path="eda.html"><a href="eda.html#nivel-socioeconómico-sse"><i class="fa fa-check"></i><b>2.1.6</b> Nivel Socioeconómico (SSE)</a></li>
+<li class="chapter" data-level="2.1.7" data-path="eda.html"><a href="eda.html#nivel-educativo-de-los-padres"><i class="fa fa-check"></i><b>2.1.7</b> Nivel Educativo de los Padres</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="eda.html"><a href="eda.html#apoyo-social-percibido-y-entrapment"><i class="fa fa-check"></i><b>2.2</b> Apoyo Social Percibido y Entrapment</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="eda.html"><a href="eda.html#apoyo-familiar-family"><i class="fa fa-check"></i><b>2.2.1</b> Apoyo Familiar (Family)</a></li>
+<li class="chapter" data-level="2.2.2" data-path="eda.html"><a href="eda.html#apoyo-de-amigos-friends"><i class="fa fa-check"></i><b>2.2.2</b> Apoyo de Amigos (Friends)</a></li>
+<li class="chapter" data-level="2.2.3" data-path="eda.html"><a href="eda.html#apoyo-de-otras-personas-significativas-sigothers"><i class="fa fa-check"></i><b>2.2.3</b> Apoyo de Otras Personas Significativas (SigOthers)</a></li>
+<li class="chapter" data-level="2.2.4" data-path="eda.html"><a href="eda.html#entrapment"><i class="fa fa-check"></i><b>2.2.4</b> Entrapment</a></li>
+<li class="chapter" data-level="2.2.5" data-path="eda.html"><a href="eda.html#correlaciones-entre-las-variables-continuas"><i class="fa fa-check"></i><b>2.2.5</b> Correlaciones entre las variables continuas</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/luencaro/social-support-entrapment-atlantico" target="_blank">Repositorio en GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Apoyo Social y Entrapment en Adolescentes Escolarizados del Atlántico</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduccion" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Capítulo 1</span> Introducción<a href="introduccion.html#introduccion" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="contexto" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Contexto<a href="introduccion.html#contexto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El modelo Motivacional-Volitivo Integrado (IMV) propone que la ideación suicida emerge
+de una secuencia motivacional en la que la percepción de derrota social (<em>defeat</em>)
+conduce a una sensación de no poder escapar de esa situación (<em>entrapment</em>). El apoyo
+social percibido ha sido estudiado tradicionalmente como un moderador que amortigua la
+transición entre <em>entrapment</em> e ideación suicida, pero su posible papel protector sobre
+la formación misma del <em>entrapment</em> permanece escasamente estudiado, en particular en
+poblaciones poco representadas en la literatura como los adolescentes escolarizados de
+municipios semirurales del Atlántico, Colombia.</p>
+<p>Antes de estimar los modelos de moderación planteados en el proyecto, el primer objetivo
+específico consiste en caracterizar las covariables sociodemográficas relevantes y
+explorar la calidad y distribución de los datos disponibles, incluyendo el patrón de
+valores faltantes en las escalas psicométricas. Ese es el propósito de este documento.</p>
+</div>
+<div id="sobre-los-datos" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Sobre los datos<a href="introduccion.html#sobre-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El conjunto de datos analizado (<code>data/df_moderation_2026.csv</code>) contiene
+680 observaciones y las siguientes variables:</p>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Tipo
+</th>
+<th style="text-align:left;">
+Descripción
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Gender
+</td>
+<td style="text-align:left;">
+Categórica
+</td>
+<td style="text-align:left;">
+Género auto-reportado (Female / Male)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Age
+</td>
+<td style="text-align:left;">
+Numérica
+</td>
+<td style="text-align:left;">
+Edad en años
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ethnicity
+</td>
+<td style="text-align:left;">
+Categórica
+</td>
+<td style="text-align:left;">
+Grupo étnico (Mestizo, Caucasian, Afrodescendant, Other)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Grade
+</td>
+<td style="text-align:left;">
+Categórica
+</td>
+<td style="text-align:left;">
+Grado escolar (9, 10, 11)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SSE
+</td>
+<td style="text-align:left;">
+Categórica
+</td>
+<td style="text-align:left;">
+Nivel socioeconómico agrupado (Low, Medium, High)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Education
+</td>
+<td style="text-align:left;">
+Categórica
+</td>
+<td style="text-align:left;">
+Nivel educativo de los padres/acudientes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Municipality
+</td>
+<td style="text-align:left;">
+Categórica
+</td>
+<td style="text-align:left;">
+Municipio del Atlántico (Santo Tomás, Polo Nuevo, Puerto Colombia, Suan)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Family
+</td>
+<td style="text-align:left;">
+Numérica (puntaje latente)
+</td>
+<td style="text-align:left;">
+Apoyo social percibido - dimensión familia (MSPSS)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Friends
+</td>
+<td style="text-align:left;">
+Numérica (puntaje latente)
+</td>
+<td style="text-align:left;">
+Apoyo social percibido - dimensión amigos (MSPSS)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SigOthers
+</td>
+<td style="text-align:left;">
+Numérica (puntaje latente)
+</td>
+<td style="text-align:left;">
+Apoyo social percibido - dimensión otras personas significativas (MSPSS)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Entrapment
+</td>
+<td style="text-align:left;">
+Numérica (puntaje latente)
+</td>
+<td style="text-align:left;">
+Puntaje de entrapment estimado
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Entrapment_SE
+</td>
+<td style="text-align:left;">
+Numérica
+</td>
+<td style="text-align:left;">
+Error estándar de medición del puntaje de entrapment
+</td>
+</tr>
+</tbody>
+</table>
+<p>A diferencia de la base de datos multivariada completa del proyecto (que incluye
+variables antropométricas e ítems crudos de las escalas psicométricas: MHC-SF, BAS,
+Rosenberg, PHQ-9, SF, BAI, EDE-Q7, SCOFF, MFQ y el cuestionario de acoso escolar), el
+archivo utilizado aquí corresponde a la versión ya depurada de las covariables
+sociodemográficas y a los puntajes latentes de apoyo social percibido y <em>entrapment</em>
+derivados de sus respectivos modelos de medición. Por esta razón, el EDA presentado en
+los capítulos siguientes se concentra en estas variables: su calidad, su patrón de
+datos faltantes y su distribución.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="eda.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": false,
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

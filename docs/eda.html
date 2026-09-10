@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Análisis Exploratorio de Datos | Apoyo Social y Entrapment en Adolescentes Escolarizados del Atlántico</title>
+  <meta name="description" content="Análisis Exploratorio de Datos del proyecto de Seminario Investigativo sobre apoyo social percibido y entrapment en adolescentes escolarizados de municipios del departamento del Atlántico, Colombia." />
+  <meta name="generator" content="bookdown 0.48 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Análisis Exploratorio de Datos | Apoyo Social y Entrapment en Adolescentes Escolarizados del Atlántico" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Análisis Exploratorio de Datos del proyecto de Seminario Investigativo sobre apoyo social percibido y entrapment en adolescentes escolarizados de municipios del departamento del Atlántico, Colombia." />
+  <meta name="github-repo" content="luencaro/social-support-entrapment-atlantico" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Análisis Exploratorio de Datos | Apoyo Social y Entrapment en Adolescentes Escolarizados del Atlántico" />
+  
+  <meta name="twitter:description" content="Análisis Exploratorio de Datos del proyecto de Seminario Investigativo sobre apoyo social percibido y entrapment en adolescentes escolarizados de municipios del departamento del Atlántico, Colombia." />
+  
+
+<meta name="author" content="Natalia Alvarado y Luis Cabarcas" />
+
+
+<meta name="date" content="2026-09-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduccion.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong>Apoyo Social y Entrapment</strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduccion.html"><a href="introduccion.html#contexto"><i class="fa fa-check"></i><b>1.1</b> Contexto</a></li>
+<li class="chapter" data-level="1.2" data-path="introduccion.html"><a href="introduccion.html#sobre-los-datos"><i class="fa fa-check"></i><b>1.2</b> Sobre los datos</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> Análisis Exploratorio de Datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="eda.html"><a href="eda.html#características-sociodemográficas"><i class="fa fa-check"></i><b>2.1</b> Características Sociodemográficas</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="eda.html"><a href="eda.html#género"><i class="fa fa-check"></i><b>2.1.1</b> Género</a></li>
+<li class="chapter" data-level="2.1.2" data-path="eda.html"><a href="eda.html#edad"><i class="fa fa-check"></i><b>2.1.2</b> Edad</a></li>
+<li class="chapter" data-level="2.1.3" data-path="eda.html"><a href="eda.html#grado-escolar"><i class="fa fa-check"></i><b>2.1.3</b> Grado Escolar</a></li>
+<li class="chapter" data-level="2.1.4" data-path="eda.html"><a href="eda.html#municipio"><i class="fa fa-check"></i><b>2.1.4</b> Municipio</a></li>
+<li class="chapter" data-level="2.1.5" data-path="eda.html"><a href="eda.html#etnia"><i class="fa fa-check"></i><b>2.1.5</b> Etnia</a></li>
+<li class="chapter" data-level="2.1.6" data-path="eda.html"><a href="eda.html#nivel-socioeconómico-sse"><i class="fa fa-check"></i><b>2.1.6</b> Nivel Socioeconómico (SSE)</a></li>
+<li class="chapter" data-level="2.1.7" data-path="eda.html"><a href="eda.html#nivel-educativo-de-los-padres"><i class="fa fa-check"></i><b>2.1.7</b> Nivel Educativo de los Padres</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="eda.html"><a href="eda.html#apoyo-social-percibido-y-entrapment"><i class="fa fa-check"></i><b>2.2</b> Apoyo Social Percibido y Entrapment</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="eda.html"><a href="eda.html#apoyo-familiar-family"><i class="fa fa-check"></i><b>2.2.1</b> Apoyo Familiar (Family)</a></li>
+<li class="chapter" data-level="2.2.2" data-path="eda.html"><a href="eda.html#apoyo-de-amigos-friends"><i class="fa fa-check"></i><b>2.2.2</b> Apoyo de Amigos (Friends)</a></li>
+<li class="chapter" data-level="2.2.3" data-path="eda.html"><a href="eda.html#apoyo-de-otras-personas-significativas-sigothers"><i class="fa fa-check"></i><b>2.2.3</b> Apoyo de Otras Personas Significativas (SigOthers)</a></li>
+<li class="chapter" data-level="2.2.4" data-path="eda.html"><a href="eda.html#entrapment"><i class="fa fa-check"></i><b>2.2.4</b> Entrapment</a></li>
+<li class="chapter" data-level="2.2.5" data-path="eda.html"><a href="eda.html#correlaciones-entre-las-variables-continuas"><i class="fa fa-check"></i><b>2.2.5</b> Correlaciones entre las variables continuas</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/luencaro/social-support-entrapment-atlantico" target="_blank">Repositorio en GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Apoyo Social y Entrapment en Adolescentes Escolarizados del Atlántico</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="eda" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Análisis Exploratorio de Datos<a href="eda.html#eda" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="características-sociodemográficas" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Características Sociodemográficas<a href="eda.html#características-sociodemográficas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="género" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Género<a href="eda.html#género" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Categoria
+</th>
+<th style="text-align:right;">
+Frecuencia
+</th>
+<th style="text-align:right;">
+Proporcion (%)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Female
+</td>
+<td style="text-align:right;">
+372
+</td>
+<td style="text-align:right;">
+54.71
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Male
+</td>
+<td style="text-align:right;">
+297
+</td>
+<td style="text-align:right;">
+43.68
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Missing
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+1.62
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:genero-plot"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/genero-plot-1.png" alt="Distribución de participantes por género" width="576" />
+<p class="caption">
+Figure 2.1: Distribución de participantes por género
+</p>
+</div>
+<p>La muestra presenta una ligera mayoría de participantes de género femenino
+(372 de 680, 54.7%),
+frente a 297 participantes de género masculino
+(43.7%). El porcentaje de valores faltantes en esta
+variable es bajo (11 casos, 1.6%).</p>
+</div>
+<div id="edad" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Edad<a href="eda.html#edad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:edad-missing"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/edad-missing-1.png" alt="Completitud de la variable Edad" width="576" />
+<p class="caption">
+Figure 2.2: Completitud de la variable Edad
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:edad-hist"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/edad-hist-1.png" alt="Distribución de la edad de los participantes" width="576" />
+<p class="caption">
+Figure 2.3: Distribución de la edad de los participantes
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:edad-box"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/edad-box-1.png" alt="Boxplot de la edad con umbrales de Hampel" width="576" />
+<p class="caption">
+Figure 2.4: Boxplot de la edad con umbrales de Hampel
+</p>
+</div>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+N
+</th>
+<th style="text-align:right;">
+Faltantes
+</th>
+<th style="text-align:right;">
+Media
+</th>
+<th style="text-align:right;">
+DE
+</th>
+<th style="text-align:right;">
+Mediana
+</th>
+<th style="text-align:right;">
+Mín
+</th>
+<th style="text-align:right;">
+Máx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+669
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+15.95
+</td>
+<td style="text-align:right;">
+1.24
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+</tbody>
+</table>
+<p>La edad presenta un bajo porcentaje de valores faltantes
+(11 de 680, 1.6%). El test de
+Lilliefors confirma una desviación estadísticamente significativa de la normalidad, consistente
+con la ligera asimetría positiva observada en el histograma. El filtro de Hampel
+(mediana ± 3×MAD) no evidencia valores atípicos: todas las edades registradas se encuentran
+dentro del rango esperado para la población de estudio (adolescentes escolarizados de 9.° a 11.°).</p>
+</div>
+<div id="grado-escolar" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Grado Escolar<a href="eda.html#grado-escolar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Categoria
+</th>
+<th style="text-align:right;">
+Frecuencia
+</th>
+<th style="text-align:right;">
+Proporcion (%)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:right;">
+223
+</td>
+<td style="text-align:right;">
+32.79
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:right;">
+213
+</td>
+<td style="text-align:right;">
+31.32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:right;">
+231
+</td>
+<td style="text-align:right;">
+33.97
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Missing
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+1.91
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:grado-plot"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/grado-plot-1.png" alt="Distribución de participantes por grado escolar" width="576" />
+<p class="caption">
+Figure 2.5: Distribución de participantes por grado escolar
+</p>
+</div>
+<p>La distribución por grado escolar es relativamente balanceada entre 9.°, 10.° y 11.°,
+lo que favorece la representatividad de comparaciones estratificadas por nivel académico
+en los análisis posteriores.</p>
+</div>
+<div id="municipio" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Municipio<a href="eda.html#municipio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Categoria
+</th>
+<th style="text-align:right;">
+Frecuencia
+</th>
+<th style="text-align:right;">
+Proporcion (%)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Santo Tomas
+</td>
+<td style="text-align:right;">
+227
+</td>
+<td style="text-align:right;">
+33.38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Polo Nuevo
+</td>
+<td style="text-align:right;">
+354
+</td>
+<td style="text-align:right;">
+52.06
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Puerto Colombia
+</td>
+<td style="text-align:right;">
+74
+</td>
+<td style="text-align:right;">
+10.88
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Suan
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+3.68
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:municipio-plot"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/municipio-plot-1.png" alt="Distribución de participantes por municipio" width="576" />
+<p class="caption">
+Figure 2.6: Distribución de participantes por municipio
+</p>
+</div>
+<p>Polo Nuevo y Santo Tomás concentran la mayor parte de la muestra, mientras que Puerto
+Colombia y Suan constituyen un estrato secundario, más reducido, de participantes.</p>
+</div>
+<div id="etnia" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Etnia<a href="eda.html#etnia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Categoria
+</th>
+<th style="text-align:right;">
+Frecuencia
+</th>
+<th style="text-align:right;">
+Proporcion (%)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Mestizo
+</td>
+<td style="text-align:right;">
+245
+</td>
+<td style="text-align:right;">
+36.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Caucasian
+</td>
+<td style="text-align:right;">
+199
+</td>
+<td style="text-align:right;">
+29.26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Afrodescendant
+</td>
+<td style="text-align:right;">
+103
+</td>
+<td style="text-align:right;">
+15.15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Other
+</td>
+<td style="text-align:right;">
+77
+</td>
+<td style="text-align:right;">
+11.32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Missing
+</td>
+<td style="text-align:right;">
+56
+</td>
+<td style="text-align:right;">
+8.24
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:etnia-plot"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/etnia-plot-1.png" alt="Distribución de participantes por grupo étnico" width="576" />
+<p class="caption">
+Figure 2.7: Distribución de participantes por grupo étnico
+</p>
+</div>
+<p>La composición étnica de la muestra es heterogénea, con ‘Mestizo’ y ‘Caucasian’ como las
+categorías más frecuentes, seguidas de ‘Afrodescendant’ y ‘Other’. El porcentaje de
+valores faltantes en esta variable (8.2%) es
+mayor que en las demás variables demográficas, lo que sugiere mayor reticencia o
+dificultad de auto-reporte en este ítem.</p>
+</div>
+<div id="nivel-socioeconómico-sse" class="section level3 hasAnchor" number="2.1.6">
+<h3><span class="header-section-number">2.1.6</span> Nivel Socioeconómico (SSE)<a href="eda.html#nivel-socioeconómico-sse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Categoria
+</th>
+<th style="text-align:right;">
+Frecuencia
+</th>
+<th style="text-align:right;">
+Proporcion (%)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Low
+</td>
+<td style="text-align:right;">
+493
+</td>
+<td style="text-align:right;">
+72.50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Medium
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+16.32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+High
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+1.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Missing
+</td>
+<td style="text-align:right;">
+69
+</td>
+<td style="text-align:right;">
+10.15
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sse-plot"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/sse-plot-1.png" alt="Distribución de participantes por nivel socioeconómico" width="576" />
+<p class="caption">
+Figure 2.8: Distribución de participantes por nivel socioeconómico
+</p>
+</div>
+<p>El nivel socioeconómico ‘Low’ concentra a la gran mayoría de la muestra, seguido de
+‘Medium’, mientras que ‘High’ representa una fracción marginal. Esta distribución es
+consistente con el contexto semirural de los municipios estudiados. El porcentaje de
+valores faltantes (10.1%) es el más alto entre las
+variables demográficas, atribuible probablemente a que un subconjunto de adolescentes
+desconoce la clasificación socioeconómica oficial de su hogar.</p>
+</div>
+<div id="nivel-educativo-de-los-padres" class="section level3 hasAnchor" number="2.1.7">
+<h3><span class="header-section-number">2.1.7</span> Nivel Educativo de los Padres<a href="eda.html#nivel-educativo-de-los-padres" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Categoria
+</th>
+<th style="text-align:right;">
+Frecuencia
+</th>
+<th style="text-align:right;">
+Proporcion (%)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Primary
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+6.62
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+High School
+</td>
+<td style="text-align:right;">
+453
+</td>
+<td style="text-align:right;">
+66.62
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergraduate
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+12.50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Graduate
+</td>
+<td style="text-align:right;">
+54
+</td>
+<td style="text-align:right;">
+7.94
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Missing
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+6.32
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:educacion-plot"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/educacion-plot-1.png" alt="Distribución de participantes por nivel educativo de los padres" width="576" />
+<p class="caption">
+Figure 2.9: Distribución de participantes por nivel educativo de los padres
+</p>
+</div>
+<p>‘High School’ es la categoría modal, lo que indica que la educación secundaria está
+ampliamente asegurada entre los hogares de los participantes, mientras que el acceso a
+educación superior (‘Undergraduate’ y ‘Graduate’) es considerablemente menor.</p>
+</div>
+</div>
+<div id="apoyo-social-percibido-y-entrapment" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Apoyo Social Percibido y Entrapment<a href="eda.html#apoyo-social-percibido-y-entrapment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las variables <code>Family</code>, <code>Friends</code> y <code>SigOthers</code> corresponden a los puntajes latentes de
+las tres dimensiones de la Escala Multidimensional de Apoyo Social Percibido (MSPSS):
+familia, amigos y otras personas significativas. La variable <code>Entrapment</code> corresponde al
+puntaje latente de <em>entrapment</em>, acompañado de su error estándar de medición
+(<code>Entrapment_SE</code>). Al tratarse de puntajes derivados de un modelo de medición, se
+esperan distribuciones aproximadamente continuas centradas alrededor de cero.</p>
+<div id="apoyo-familiar-family" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Apoyo Familiar (Family)<a href="eda.html#apoyo-familiar-family" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:family-missing"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/family-missing-1.png" alt="Completitud de la dimensión Family" width="576" />
+<p class="caption">
+Figure 2.10: Completitud de la dimensión Family
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:family-hist"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/family-hist-1.png" alt="Distribución del puntaje de apoyo familiar" width="576" />
+<p class="caption">
+Figure 2.11: Distribución del puntaje de apoyo familiar
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:family-box"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/family-box-1.png" alt="Boxplot del puntaje de apoyo familiar con umbrales de Hampel" width="576" />
+<p class="caption">
+Figure 2.12: Boxplot del puntaje de apoyo familiar con umbrales de Hampel
+</p>
+</div>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+N
+</th>
+<th style="text-align:right;">
+Faltantes
+</th>
+<th style="text-align:right;">
+Media
+</th>
+<th style="text-align:right;">
+DE
+</th>
+<th style="text-align:right;">
+Mediana
+</th>
+<th style="text-align:right;">
+Mín
+</th>
+<th style="text-align:right;">
+Máx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+632
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+-2.41
+</td>
+<td style="text-align:right;">
+1.57
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="apoyo-de-amigos-friends" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Apoyo de Amigos (Friends)<a href="eda.html#apoyo-de-amigos-friends" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:friends-missing"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/friends-missing-1.png" alt="Completitud de la dimensión Friends" width="576" />
+<p class="caption">
+Figure 2.13: Completitud de la dimensión Friends
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:friends-hist"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/friends-hist-1.png" alt="Distribución del puntaje de apoyo de amigos" width="576" />
+<p class="caption">
+Figure 2.14: Distribución del puntaje de apoyo de amigos
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:friends-box"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/friends-box-1.png" alt="Boxplot del puntaje de apoyo de amigos con umbrales de Hampel" width="576" />
+<p class="caption">
+Figure 2.15: Boxplot del puntaje de apoyo de amigos con umbrales de Hampel
+</p>
+</div>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+N
+</th>
+<th style="text-align:right;">
+Faltantes
+</th>
+<th style="text-align:right;">
+Media
+</th>
+<th style="text-align:right;">
+DE
+</th>
+<th style="text-align:right;">
+Mediana
+</th>
+<th style="text-align:right;">
+Mín
+</th>
+<th style="text-align:right;">
+Máx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+632
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+-2.03
+</td>
+<td style="text-align:right;">
+1.47
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="apoyo-de-otras-personas-significativas-sigothers" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Apoyo de Otras Personas Significativas (SigOthers)<a href="eda.html#apoyo-de-otras-personas-significativas-sigothers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sigothers-missing"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/sigothers-missing-1.png" alt="Completitud de la dimensión SigOthers" width="576" />
+<p class="caption">
+Figure 2.16: Completitud de la dimensión SigOthers
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sigothers-hist"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/sigothers-hist-1.png" alt="Distribución del puntaje de apoyo de otras personas significativas" width="576" />
+<p class="caption">
+Figure 2.17: Distribución del puntaje de apoyo de otras personas significativas
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sigothers-box"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/sigothers-box-1.png" alt="Boxplot del puntaje de SigOthers con umbrales de Hampel" width="576" />
+<p class="caption">
+Figure 2.18: Boxplot del puntaje de SigOthers con umbrales de Hampel
+</p>
+</div>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+N
+</th>
+<th style="text-align:right;">
+Faltantes
+</th>
+<th style="text-align:right;">
+Media
+</th>
+<th style="text-align:right;">
+DE
+</th>
+<th style="text-align:right;">
+Mediana
+</th>
+<th style="text-align:right;">
+Mín
+</th>
+<th style="text-align:right;">
+Máx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+632
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+0.43
+</td>
+<td style="text-align:right;">
+-3.11
+</td>
+<td style="text-align:right;">
+1.59
+</td>
+</tr>
+</tbody>
+</table>
+<p>Las tres dimensiones del apoyo social percibido comparten un patrón de valores faltantes
+de magnitud similar (48 casos, 7.1%),
+lo cual es consistente con que provienen del mismo instrumento (MSPSS) y probablemente
+del mismo subconjunto de participantes con no-respuesta en la escala completa.</p>
+</div>
+<div id="entrapment" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Entrapment<a href="eda.html#entrapment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:entrapment-missing"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/entrapment-missing-1.png" alt="Completitud del puntaje de Entrapment" width="576" />
+<p class="caption">
+Figure 2.19: Completitud del puntaje de Entrapment
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:entrapment-hist"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/entrapment-hist-1.png" alt="Distribución del puntaje de Entrapment" width="576" />
+<p class="caption">
+Figure 2.20: Distribución del puntaje de Entrapment
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:entrapment-box"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/entrapment-box-1.png" alt="Boxplot del puntaje de Entrapment con umbrales de Hampel" width="576" />
+<p class="caption">
+Figure 2.21: Boxplot del puntaje de Entrapment con umbrales de Hampel
+</p>
+</div>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+N
+</th>
+<th style="text-align:right;">
+Faltantes
+</th>
+<th style="text-align:right;">
+Media
+</th>
+<th style="text-align:right;">
+DE
+</th>
+<th style="text-align:right;">
+Mediana
+</th>
+<th style="text-align:right;">
+Mín
+</th>
+<th style="text-align:right;">
+Máx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+660
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+-0.25
+</td>
+<td style="text-align:right;">
+0.97
+</td>
+<td style="text-align:right;">
+-0.28
+</td>
+<td style="text-align:right;">
+-1.69
+</td>
+<td style="text-align:right;">
+2.01
+</td>
+</tr>
+</tbody>
+</table>
+<div id="error-estándar-de-medición-entrapment_se" class="section level4 hasAnchor" number="2.2.4.1">
+<h4><span class="header-section-number">2.2.4.1</span> Error estándar de medición (Entrapment_SE)<a href="eda.html#error-estándar-de-medición-entrapment_se" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:entrapment-se-hist"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/entrapment-se-hist-1.png" alt="Distribución del error estándar del puntaje de Entrapment" width="576" />
+<p class="caption">
+Figure 2.22: Distribución del error estándar del puntaje de Entrapment
+</p>
+</div>
+<p>El error estándar de medición de <em>entrapment</em> varía entre participantes, lo que refleja
+la precisión diferencial del puntaje latente estimado y deberá tenerse en cuenta al
+incorporar la incertidumbre de medición en los modelos de moderación (por ejemplo,
+mediante un enfoque SEM o Bayesiano).</p>
+</div>
+</div>
+<div id="correlaciones-entre-las-variables-continuas" class="section level3 hasAnchor" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> Correlaciones entre las variables continuas<a href="eda.html#correlaciones-entre-las-variables-continuas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:correlaciones"></span>
+<img src="eda-apoyo-social-entrapment_files/figure-html/correlaciones-1.png" alt="Matriz de correlación (pares completos) entre apoyo social y entrapment" width="480" />
+<p class="caption">
+Figure 2.23: Matriz de correlación (pares completos) entre apoyo social y entrapment
+</p>
+</div>
+<p>Como es de esperar, las tres dimensiones del apoyo social percibido están
+correlacionadas positivamente entre sí, mientras que <code>Entrapment</code> muestra una asociación
+en sentido contrario con cada una de ellas, en línea con la hipótesis de que un mayor
+apoyo social percibido se relaciona con menores niveles de <em>entrapment</em>. Esta observación
+descriptiva es la que se pondrá a prueba formalmente mediante los modelos de regresión
+jerárquica planteados en el proyecto.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduccion.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": false,
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

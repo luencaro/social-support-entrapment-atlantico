@@ -1,0 +1,11 @@
+book_filename: "eda-apoyo-social-entrapment"
+output_dir: "docs"
+delete_merged_file: true
+new_session: false
+rmd_files:
+  - "index.Rmd"
+  - "01-introduccion.Rmd"
+  - "02-eda.Rmd"
+language:
+  ui:
+    chapter_name: "Capítulo "

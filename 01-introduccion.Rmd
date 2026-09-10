@@ -1,0 +1,51 @@
+# Introducción {#introduccion}
+
+## Contexto
+
+El modelo Motivacional-Volitivo Integrado (IMV) propone que la ideación suicida emerge
+de una secuencia motivacional en la que la percepción de derrota social (*defeat*)
+conduce a una sensación de no poder escapar de esa situación (*entrapment*). El apoyo
+social percibido ha sido estudiado tradicionalmente como un moderador que amortigua la
+transición entre *entrapment* e ideación suicida, pero su posible papel protector sobre
+la formación misma del *entrapment* permanece escasamente estudiado, en particular en
+poblaciones poco representadas en la literatura como los adolescentes escolarizados de
+municipios semirurales del Atlántico, Colombia.
+
+Antes de estimar los modelos de moderación planteados en el proyecto, el primer objetivo
+específico consiste en caracterizar las covariables sociodemográficas relevantes y
+explorar la calidad y distribución de los datos disponibles, incluyendo el patrón de
+valores faltantes en las escalas psicométricas. Ese es el propósito de este documento.
+
+## Sobre los datos
+
+El conjunto de datos analizado (`data/df_moderation_2026.csv`) contiene
+`r nrow(df)` observaciones y las siguientes variables:
+
+```{r tabla-variables}
+tibble::tribble(
+  ~Variable, ~Tipo, ~Descripcion,
+  "Gender", "Categórica", "Género auto-reportado (Female / Male)",
+  "Age", "Numérica", "Edad en años",
+  "Ethnicity", "Categórica", "Grupo étnico (Mestizo, Caucasian, Afrodescendant, Other)",
+  "Grade", "Categórica", "Grado escolar (9, 10, 11)",
+  "SSE", "Categórica", "Nivel socioeconómico agrupado (Low, Medium, High)",
+  "Education", "Categórica", "Nivel educativo de los padres/acudientes",
+  "Municipality", "Categórica", "Municipio del Atlántico (Santo Tomás, Polo Nuevo, Puerto Colombia, Suan)",
+  "Family", "Numérica (puntaje latente)", "Apoyo social percibido - dimensión familia (MSPSS)",
+  "Friends", "Numérica (puntaje latente)", "Apoyo social percibido - dimensión amigos (MSPSS)",
+  "SigOthers", "Numérica (puntaje latente)", "Apoyo social percibido - dimensión otras personas significativas (MSPSS)",
+  "Entrapment", "Numérica (puntaje latente)", "Puntaje de entrapment estimado",
+  "Entrapment_SE", "Numérica", "Error estándar de medición del puntaje de entrapment"
+) %>%
+  kable(col.names = c("Variable", "Tipo", "Descripción")) %>%
+  kable_styling(full_width = FALSE, bootstrap_options = c("striped", "hover"))
+```
+
+A diferencia de la base de datos multivariada completa del proyecto (que incluye
+variables antropométricas e ítems crudos de las escalas psicométricas: MHC-SF, BAS,
+Rosenberg, PHQ-9, SF, BAI, EDE-Q7, SCOFF, MFQ y el cuestionario de acoso escolar), el
+archivo utilizado aquí corresponde a la versión ya depurada de las covariables
+sociodemográficas y a los puntajes latentes de apoyo social percibido y *entrapment*
+derivados de sus respectivos modelos de medición. Por esta razón, el EDA presentado en
+los capítulos siguientes se concentra en estas variables: su calidad, su patrón de
+datos faltantes y su distribución.
