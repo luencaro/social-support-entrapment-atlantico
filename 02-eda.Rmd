@@ -230,11 +230,8 @@ mediante un enfoque SEM o Bayesiano).
 
 ### Correlaciones entre las variables continuas
 
-```{r correlaciones, fig.cap="Matriz de correlación (pares completos) entre apoyo social y entrapment", fig.width=5, fig.height=5}
-vars_continuas <- df %>% select(Family, Friends, SigOthers, Entrapment)
-cor_mat <- cor(vars_continuas, use = "pairwise.complete.obs")
-corrplot::corrplot(cor_mat, method = "color", type = "upper", addCoef.col = "black",
-                    tl.col = "black", diag = FALSE)
+```{r correlaciones, fig.cap="Matriz de correlación (pares completos) entre apoyo social y entrapment", fig.width=5.5, fig.height=4.5}
+plot_corr_heatmap(df, c("Family", "Friends", "SigOthers", "Entrapment"))
 ```
 
 Como es de esperar, las tres dimensiones del apoyo social percibido están
