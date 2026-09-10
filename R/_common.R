@@ -36,7 +36,24 @@ recode_missing <- function(x) {
   dplyr::if_else(is.na(x) | x == "", "Missing", x)
 }
 
-df_raw <- readr::read_csv("data/df_moderation_2026.csv", show_col_types = FALSE)
+# La ruta real del archivo de datos no se versiona (ver .Renviron.example):
+# cada quien la define en su propio .Renviron local (gitignorado).
+eda_data_path <- Sys.getenv("DATA_PATH", unset = "")
+if (eda_data_path == "") {
+  stop(
+    "No se encontro la variable de entorno DATA_PATH.\n",
+    "Copia .Renviron.example a .Renviron en la raiz del proyecto, completa la ",
+    "ruta real del archivo de datos, y reinicia la sesion de R."
+  )
+}
+if (!file.exists(eda_data_path)) {
+  stop(sprintf(
+    "DATA_PATH apunta a '%s', pero ese archivo no existe.",
+    eda_data_path
+  ))
+}
+
+df_raw <- readr::read_csv(eda_data_path, show_col_types = FALSE)
 
 df <- df_raw %>%
   mutate(

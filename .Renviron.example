@@ -1,0 +1,4 @@
+# Copia este archivo a .Renviron (en la raiz del proyecto) y completa la ruta
+# real del archivo de datos. .Renviron esta en .gitignore, asi que no se sube
+# al repositorio.
+DATA_PATH=data/nombre_del_archivo.csv

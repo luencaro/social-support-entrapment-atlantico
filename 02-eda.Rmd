@@ -1,5 +1,9 @@
 # Análisis Exploratorio de Datos {#eda}
 
+```{r setup-02, include=FALSE}
+if (!exists("df", mode = "list")) source("R/_common.R")
+```
+
 ## Características Sociodemográficas
 
 ### Género

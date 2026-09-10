@@ -1,5 +1,9 @@
 # Introducción {#introduccion}
 
+```{r setup-01, include=FALSE}
+if (!exists("df", mode = "list")) source("R/_common.R")
+```
+
 ## Contexto
 
 El modelo Motivacional-Volitivo Integrado (IMV) propone que la ideación suicida emerge
